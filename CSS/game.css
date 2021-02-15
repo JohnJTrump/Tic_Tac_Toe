@@ -1,0 +1,38 @@
+/*----------------------------------------------------------------------------
+        Tic Tac Toe Styling
+-----------------------------------------------------------------------------*/
+
+h1 {
+    line-height: 50px;
+    font-weight: 900;
+    font-size: 80px;
+    text-align: center;
+    color: #392e9c;
+    text-shadow: 2px 2px 3px rgba(207, 28, 192, 0.5);
+}
+
+.center-container { /* This container includes table and canvas. */
+    
+    width: 608px; /*width of container*/
+    margin: 0 auto; /* centers container*/
+    margin-top: 50px; /* 50px down from top */
+}
+
+table {
+    border-collapse: collapse; /* coolapses table borders in to one border */
+    border-style: hidden;
+}
+
+td {
+    cursor: pointer;
+    border: 4px solid rgba(235, 30, 30, 0.8);
+    padding: 0px; /* removes default padding */
+    width: 200px;
+    height: 200px;
+}
+
+canvas { 
+    position: absolute; /* sets canvas to top left corner of container. */
+    z-index: 10; /* makes canvas over top of table */
+    pointer-events: none; /* makes canvas invisible */
+}
