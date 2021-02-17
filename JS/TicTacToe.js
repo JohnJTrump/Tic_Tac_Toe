@@ -23,14 +23,14 @@ function placeXOrO(squareNumber) { //This function is for placing an X or O in a
             else { //If active player is anything other that 'X'.
                 activePlayer = 'X'; //Change the activePlayer to 'X'
             }
-    }     
+         
         audio('./media/positive_tone.mp3'); //This function plays placement sound.
         if(activePlayer === 'O') { //This condition checks to see if it is computers turn.
             disableClick(); //This function disables clicking for computer choice.
             setTimeout(function () { computersTurn(); }, 1000); //This function waits 1 second before placing the image and enabling click.
         }   
         return true; //Returning true is needed for our computersTurn() function to work.
-
+    }
     function computersTurn() { //This function results in a random square being selected.
         let success = false; //This boolean is needed for our while loop.
         let pickASquare; //This variable stores a random number 0-8
