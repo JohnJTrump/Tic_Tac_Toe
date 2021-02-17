@@ -24,27 +24,26 @@ function placeXOrO(squareNumber) { //This function is for placing an X or O in a
                 activePlayer = 'X'; //Change the activePlayer to 'X'
             }
     }     
-    audio('./media/positive_tone.mp3'); //This function plays placement sound.
-        if(activePlayer === 'o') { //This condition checks to see if it is computers turn.
+        audio('./media/positive_tone.mp3'); //This function plays placement sound.
+        if(activePlayer === 'O') { //This condition checks to see if it is computers turn.
             disableClick(); //This function disables clicking for computer choice.
             setTimeout(function () { computersTurn(); }, 1000); //This function waits 1 second before placing the image and enabling click.
         }   
         return true; //Returning true is needed for our computersTurn() function to work.
-}
 
-function computersTurn() { //This function results in a random square being selected.
-    let success = false; //This boolean is needed for our while loop.
-    let pickASquare; //This variable stores a random number 0-8
-    while(!success) { //This condition allows our while loop to keep trying is a square is selected already.
-        pickASquare = String(Math.floor(Math.random() * 9));
-        if (placeXOrO(pickASquare)){
-            placeXOrO(pickASquare); //This line calls the function.
-            success = true; //This changes our boolean and ends the loop.
-        };
+    function computersTurn() { //This function results in a random square being selected.
+        let success = false; //This boolean is needed for our while loop.
+        let pickASquare; //This variable stores a random number 0-8
+        while(!success) { //This condition allows our while loop to keep trying is a square is selected already.
+            pickASquare = String(Math.floor(Math.random() * 9));
+            if (placeXOrO(pickASquare)){
+                placeXOrO(pickASquare); //This line calls the function.
+                success = true; //This changes our boolean and ends the loop.
+            };
+        }
     }
+
 }
-
-
 //This function parses the selectedSquares array to search for win conditions.
 //drawWinLine function is called to draw line if condition is met.
 function checkWinConditions() {
